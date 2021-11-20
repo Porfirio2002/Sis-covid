@@ -34,20 +34,20 @@ int opcao = 10;
 while (opcao != 2)
 {
 printf("=================CADASTRO DE PACIENTE================= \n");
-printf("********** 1. Adicionar \n");
-printf("********** 2. Login \n");
+printf("********** 1. Login \n");
+printf("********** 2. Adicionar \n");
 
 
   printf(" Digite sua opcao: ");
   scanf("%d",&opcao);
   printf("\n");
 
-  if (opcao == 1)
+  if (opcao == 2)
   {
      adicionar(c);
      system("clear");
   }
-  else if (opcao == 2)
+  else if (opcao == 1)
   {
      char login[30];
     char senha[30];
@@ -76,7 +76,7 @@ void adicionar()
 {
 FILE *fp;
 struct cadastro c;
-int opcao = 1;
+int opcao = 2;
 do
 {
 printf("\nCADASTRO DE PACIENTE\n\n");
@@ -103,8 +103,128 @@ printf("\nCADASTRO DE PACIENTE\n\n");
 	scanf("%d", c.datadediagnostico);
 
 
-	printf("\n Possui alguma comorbidade? : ");
-	scanf("%s", c.comorbidadedopaciente);
+	int valor;
+        int resposta;
+        int yes = 1;
+        int no = 2;
+
+        printf("\n              Possui alguma comorbidade?\n");
+
+        printf("[1] = SIM \n");
+        printf("[2] = NÃO \n");
+        scanf("%d", &resposta);
+
+                                    system("cls");
+
+                                    if(resposta==yes){
+        printf("         Digite abaixo a comorbidade correspondente: \n\n ");
+
+            printf("[1] - Diabete \n");
+            printf(" [2] - Cardiopatias \n");
+            printf(" [3] - Obesidade \n");
+            printf(" [4] - Cancêr \n");
+            printf(" [5] - Pneumopatias \n");
+            printf(" [6] - Doenças hepáticas \n");
+            printf(" [7] - Sindrome de Down \n");
+            char Outras[45];
+
+            printf("Outras:");
+            scanf("%45s", Outras);
+
+
+
+
+        scanf("%d", &valor);
+
+
+        switch(valor)
+            {
+            case 1 :
+                printf("1 - Diabete \n");
+            break;
+            case 2 :
+
+                printf("2 - Cardiopatias \n");
+                break;
+            case 3 :
+                printf("3 - Obesidade \n");
+                break;
+            case 4 :
+                printf("4 - Cancêr \n");
+                break;
+            case 5 :
+                printf("5 - Pneumopatias \n");
+                break;
+            case 6 :
+                printf("6 - Doenças hepáticas \n");
+                break;
+            case 7 :
+                printf("7 - Sindrome de Down \n");
+                break;
+            case 8 :
+                printf("8 - Outros \n");
+                break;
+
+
+        default :
+            printf("Erro: Valor inválido! Digite um valor de 1 a 8\n");
+            return 0;
+            }}
+
+        else {
+        printf("\n              Faz uso contínuo de medicamentos?\n");
+
+        printf("[1] = SIM \n");
+        printf("[2] = NÃO\n");
+        scanf("%d", &resposta);
+
+        }
+                            system("cls");
+
+        if(resposta==yes){
+        printf("\n              Faz uso contínuo de medicamentos?\n");
+
+        printf("[1] = SIM \n");
+        printf("[2] = NÃO\n");
+        scanf("%d", &resposta);
+
+        }
+
+        if(resposta==yes){
+            printf("Digite abaixo o tipo de medicamento: \n");
+
+            printf("[1] - Tarja Amarela \n");
+            printf("[2] - Tarja Vermelha \n");
+            printf("[3] - Tarja Preta \n");
+
+        }
+        else{
+            printf("Você assinalou que não faz uso contínuo de medicamentos!\n");
+        }
+
+        scanf("%d", &valor);
+
+
+        switch(valor)
+            {
+            case 1 :
+                printf("1 - Tarja amarela \n");
+            break;
+            case 2 :
+                printf("2 - Tarja vermelha \n");
+                break;
+            case 3 :
+                printf("3 - Tarja preta \n");
+                break;
+
+            default:
+                printf("Erro: Valor inválido! Digite um valor de 1 a 3\n");
+            return 0;
+
+            scanf("%d", &valor);
+
+            }
+
 
 
 	printf("Digite 1 para novo cadastro ou 0 para sair: ");
@@ -124,7 +244,6 @@ scanf("%s", login);
 }
 //return 0;
 
-
-
 }
+
 }
