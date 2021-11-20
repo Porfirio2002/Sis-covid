@@ -33,7 +33,7 @@ int opcao = 10;
 
 while (opcao != 2)
 {
-printf("=================CADASTRO DE PACIENTE================= \n");
+printf("=================BEM VINDO================= \n");
 printf("********** 1. Login \n");
 printf("********** 2. Adicionar \n");
 
@@ -79,6 +79,8 @@ struct cadastro c;
 int opcao = 2;
 do
 {
+
+
 printf("\nCADASTRO DE PACIENTE\n\n");
 
 	printf("\nDigite o nome: ");
@@ -126,10 +128,8 @@ printf("\nCADASTRO DE PACIENTE\n\n");
             printf(" [5] - Pneumopatias \n");
             printf(" [6] - Doenças hepáticas \n");
             printf(" [7] - Sindrome de Down \n");
-            char Outras[45];
 
-            printf("Outras:");
-            scanf("%45s", Outras);
+
 
 
 
@@ -161,13 +161,11 @@ printf("\nCADASTRO DE PACIENTE\n\n");
             case 7 :
                 printf("7 - Sindrome de Down \n");
                 break;
-            case 8 :
-                printf("8 - Outros \n");
-                break;
+
 
 
         default :
-            printf("Erro: Valor inválido! Digite um valor de 1 a 8\n");
+            printf("Erro: Valor inválido! Digite um valor de 1 a 7\n");
             return 0;
             }}
 
@@ -225,6 +223,46 @@ printf("\nCADASTRO DE PACIENTE\n\n");
 
             }
 
+ int valor2;
+        int resposta2;
+        int yes2 = 1;
+        int no2 = 2;
+
+        printf("\n              Comorbidade não listada?\n");
+
+        printf("[1] = SIM \n");
+        printf("[2] = NÃO \n");
+        scanf("%d", &resposta2);
+
+                                    system("cls");
+
+                                   if(resposta==yes2){
+             FILE *pont_arq;
+char outra[20];
+
+
+  pont_arq = fopen("paciente.txt", "a");
+
+
+  if(pont_arq == NULL)
+  {
+  printf("Erro na abertura do arquivo!");
+  return 1;
+  }
+
+  printf("Comorbidade não listada: ");
+  scanf("%s", outra);
+
+
+  fprintf(pont_arq, "%s", outra);
+
+  fclose(pont_arq);
+
+  printf("Dados gravados com sucesso!");
+
+  return(0);
+}
+
 
 
 	printf("Digite 1 para novo cadastro ou 0 para sair: ");
@@ -245,5 +283,6 @@ scanf("%s", login);
 //return 0;
 
 }
-
 }
+
+
