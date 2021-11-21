@@ -197,7 +197,42 @@ printf("\nCADASTRO DE PACIENTE\n\n");
 
         }
         else{
-            printf("Você assinalou que não faz uso contínuo de medicamentos!\n");
+
+
+        printf("\n              Comorbidade não listada?\n");
+
+        printf("[1] = SIM \n");
+        printf("[2] = NÃO \n");
+        scanf("%d", &resposta);
+
+                                    system("cls");
+
+                                   if(resposta==yes){
+
+             FILE *pont_arq;
+char outra[20];
+
+
+  pont_arq = fopen("paciente.txt", "a");
+
+
+  if(pont_arq == NULL)
+  {
+  printf("Erro na abertura do arquivo!");
+  return 1;
+  }
+
+  printf("Comorbidade não listada: ");
+  scanf("%s", outra);
+
+
+  fprintf(pont_arq, "%s", outra);
+
+  fclose(pont_arq);
+
+  printf("Dados gravados com sucesso!");
+
+  return(0);
         }
 
         scanf("%d", &valor);
@@ -223,44 +258,7 @@ printf("\nCADASTRO DE PACIENTE\n\n");
 
             }
 
- int valor2;
-        int resposta2;
-        int yes2 = 1;
-        int no2 = 2;
 
-        printf("\n              Comorbidade não listada?\n");
-
-        printf("[1] = SIM \n");
-        printf("[2] = NÃO \n");
-        scanf("%d", &resposta2);
-
-                                    system("cls");
-
-                                   if(resposta==yes2){
-             FILE *pont_arq;
-char outra[20];
-
-
-  pont_arq = fopen("paciente.txt", "a");
-
-
-  if(pont_arq == NULL)
-  {
-  printf("Erro na abertura do arquivo!");
-  return 1;
-  }
-
-  printf("Comorbidade não listada: ");
-  scanf("%s", outra);
-
-
-  fprintf(pont_arq, "%s", outra);
-
-  fclose(pont_arq);
-
-  printf("Dados gravados com sucesso!");
-
-  return(0);
 }
 
 
